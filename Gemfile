@@ -10,6 +10,6 @@ group :development, :test do
   gem 'launchy'
   gem 'rspec'
   gem 'shotgun'
-end
+endgit 
 
 # gem "rails"
