@@ -10,8 +10,11 @@ group :development, :test do
   gem 'cucumber'
   gem 'cucumber-sinatra'
   gem 'launchy'
-  gem 'rspec'
   gem 'shotgun'
+end
+
+group :test do
+  gem 'rspec'
 end
 
 # gem "rails"
