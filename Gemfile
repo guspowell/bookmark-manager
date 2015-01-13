@@ -2,6 +2,8 @@
 source "https://rubygems.org"
 
 gem 'sinatra'
+gem 'data_mapper'
+gem 'dm-postgres-adapter'
 
 group :development, :test do
   gem 'capybara'
@@ -10,6 +12,6 @@ group :development, :test do
   gem 'launchy'
   gem 'rspec'
   gem 'shotgun'
-endgit 
+end
 
 # gem "rails"
