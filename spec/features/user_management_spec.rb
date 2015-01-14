@@ -21,5 +21,10 @@ feature "User signs up" do
 		click_button "Sign up"
 	end
 
+	scenario "with a password that doesn't match" do
+		expect{ sign_up('a@a.com', 'pass', 'wrong') }.to change(User, :count).by(0)
+		expect(current_path).to eq('/users')
+	end
+
 	
 end
