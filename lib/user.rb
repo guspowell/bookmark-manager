@@ -20,8 +20,8 @@ class User
 	end
 
 	def self.authenticate(email, password)
-		user = first(:email => email)
-		if user && BCrypt::Password.new(user.password_digest) == password
+		user = first(:email => email)	#find first user with this email address
+		if user && BCrypt::Password.new(user.password_digest) == password 		# '==' is different for bycrypt
 			user
 		else
 			nil

@@ -59,7 +59,7 @@ class BookmarkManager < Sinatra::Base
     end
   end
 
-  get 'sessions/new' do
+  get '/sessions/new' do
     erb :"sessions/new"
   end
 
