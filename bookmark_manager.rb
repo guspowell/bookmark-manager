@@ -26,6 +26,10 @@ class BookmarkManager < Sinatra::Base
     erb :index
   end
 
+  get '/links/new' do
+    erb :"links/new"
+  end
+
   post '/links' do
     url = params["url"]
     title = params["title"]
@@ -81,6 +85,28 @@ class BookmarkManager < Sinatra::Base
     session[:user_id] = nil
     redirect to('/')
   end
+
+  # post '/sessions/reminder' do
+  #   user = User.first(:email => params[:email])
+  #   user.password_token = (1.64).map{('A'..'Z').to_a.sample}.join
+  #   user.save
+  #   'Check your email'
+  # end
+
+  # get '/sessions/request_token'
+  #   erb :"sessions/request_token"
+  # end
+
+  # get '/sessions/change_password/:token'
+  #   @password_token = params[:token]
+  #   erb :"sessions/change_password" 
+  # end
+
+  # post '/sessions/change_reset'
+  #   user = Usser.first(:password_token => params[:password_token])
+  #   user.update(:password => params[:new_password], :password_confirmation => params[:password_confirmation]
+  #   user.save
+  # end
 
   helpers do
     def current_user

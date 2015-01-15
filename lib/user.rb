@@ -13,6 +13,7 @@ class User
 	property :email, String
 	property :password_digest, Text
 	property :email, String, :unique => true
+	property :password_token, Text
 
 	def password=(password)
 		@password = password
@@ -28,3 +29,6 @@ class User
 		end
 	end
 end
+
+#everytime you change model (add column) must 'rake auto_upgrade'
+# rake auto_upgrade RACK_ENV=test

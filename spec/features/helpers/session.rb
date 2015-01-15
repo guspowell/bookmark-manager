@@ -16,4 +16,9 @@ module SessionHelpers
 		click_button 'Sign in'
 	end
 
+	# def request_token(email)
+		
+
+	# end
+
 end

@@ -1,5 +1,6 @@
 body {
 	font-family: "HelveticaNeue-Light", Helvetica, Arial, Sans-serif;
+	background-color: white;
 }
 
 header {
@@ -31,7 +32,8 @@ header #user-links {
 a.button {
 	display: inline-block;
 	width: 80px;
-	background-color: #82B743;
+	height: 25px;
+	background-color: orange;
 	border: 2px solid white;
 	color: white;
 	text-decoration: none;
@@ -42,3 +44,4 @@ a.button {
 	margin-right: 5px;
 	text-shadow: 0 0 2px rgba(0,0,0, 0.4);
 }
+
