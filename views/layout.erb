@@ -1,28 +1,49 @@
-<body>
+<!DOCTYPE html>
+<html>
+	<head>
+		<link type="text/css" rel="stylesheet" href="/stylesheets/reset.css"/>
+		<link type="text/css" rel="stylesheet" href="/stylesheets/stylesheet.css"/>
+		<title>Bookmark Manager</title>
+	</head>
 
-	<% if flash[:errors] && !flash[:errors].empty? %>
-		Sorry, there were the following problems with the form.
-		<ul id="errors">
-			<% flash[:errors].each do |error| %>
-				<li><%= error %></li>
-			<% end %>
-		</ul>
-	<% end %>
+	<body>
+		<% if flash[:errors] && !flash[:errors].empty? %>
+			Sorry, there were the following problems with the form.
+			<ul id="errors">
+				<% flash[:errors].each do |error| %>
+					<li><%= error %></li>
+				<% end %>
+			</ul>
+		<% end %>
 
-  <% if flash[:notice] %>
-    <div id="notice">
-      <%= flash[:notice] %>
-    </div>
-  <% end %>
+	  <% if flash[:notice] %>
+	    <div id="notice">
+	      <%= flash[:notice] %>
+	    </div>
+	  <% end %>
 
-  <% if current_user %>
-    Welcome, <%= current_user.email %>
-    <form method="post" action="/sessions">
-      <input type="hidden" name="_method" value="delete">
-      <input type="submit" value="Sign out">
-    </form>
-  <% end %>
+	  <header>
+	  	<div id="logo">Bookmark Manager</div>
+	  	<div id="user-links">
 
-	<%= yield %>
+			  <% if current_user %>
+			    <span id="welcome-message">
+			    	Welcome, <%= current_user.email %>
+			    </span>
 
-</body>
+			    <form id="sign-out" method="post" action="/sessions">
+			      <input type="hidden" name="_method" value="delete">
+			      <input type="submit" value="Sign out">
+			    </form>
+			  <% else %>
+			  	<a href='/users/new' id='sign-up' class='button'>Sign up</a>
+			  	<a href='/sessions/new' id='sign-in' class='button'>Sign in</a>
+			  <% end %>
+			  
+			</div>
+		</header>
+
+		<%= yield %>
+
+	</body>
+</html>

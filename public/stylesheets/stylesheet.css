@@ -1,0 +1,44 @@
+body {
+	font-family: "HelveticaNeue-Light", Helvetica, Arial, Sans-serif;
+}
+
+header {
+	width: 100%;
+	height: 50px;
+	background-color: black;
+	color: white;
+	display: flex;
+	padding: 10px 30px;
+}
+
+header > * {
+	margin: auto 0;
+}
+
+header #logo {
+	margin: auto 0;
+	display: flex;
+	font-size: 40px;
+	font-family: "HelveticaNeue-Light";
+}
+
+header #user-links {
+	flex: 1;
+	-webkit-flex: 1;
+	text-align: right;
+}
+
+a.button {
+	display: inline-block;
+	width: 80px;
+	background-color: #82B743;
+	border: 2px solid white;
+	color: white;
+	text-decoration: none;
+	padding: 0px 10px;
+	text-align: center;
+	border-radius: 2px;
+	margin-left: 5px;
+	margin-right: 5px;
+	text-shadow: 0 0 2px rgba(0,0,0, 0.4);
+}
